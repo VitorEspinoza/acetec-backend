@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const connection = require("../database/database");
 
-const Login = connection.define("logins", {
+const Account = connection.define("accounts", {
   email: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -24,4 +24,4 @@ const Login = connection.define("logins", {
   },
 });
 
-module.exports = Login;
+module.exports = Account;

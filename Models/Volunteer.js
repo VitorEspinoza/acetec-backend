@@ -1,9 +1,13 @@
 const Sequelize = require("sequelize");
 import { DataTypes } from "sequelize";
+
 const connection = require("../database/database");
+
 const Address = require("./Adress");
+const Account = require("./Account");
+
 const Volunteer = connection.define("volunteers", {
-  idLogin: {
+  idAccount: {
     type: DataTypes.BIGINT,
     allowNull: false,
   },
@@ -32,6 +36,9 @@ const Volunteer = connection.define("volunteers", {
     allowNull: false,
   },
 });
+
+Volunteer.hasOne(Account);
+Account.belongsTo(Volunteer);
 
 Volunteer.hasOne(Address);
 Address.belongsTo(Volunteer);
