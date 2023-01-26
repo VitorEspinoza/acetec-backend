@@ -84,5 +84,20 @@ app.post("/account", async (request, response) => {
       
   })
 
+  app.put("account/active/:id", async (request, response) => {
+    let id = parseInt(request.params.id)
+
+    if(isNaN(id))
+      response.status(400).json({message: "invalid id"});
+      else {
+        Account.findOne({
+           where: {
+        id: id
+      }
+        })
+      }
+
+      
+  })
   
 
