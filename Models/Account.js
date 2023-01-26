@@ -22,6 +22,10 @@ const Account = connection.define("accounts", {
     type: Sequelize.BOOLEAN,
     allowNull: false,
   },
+  activeAccount: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+  }
 });
 
 module.exports = Account;
